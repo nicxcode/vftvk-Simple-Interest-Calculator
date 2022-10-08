@@ -5,8 +5,8 @@ function compute() {
     //store calculated interest
     var interest = principal * years * rate / 100;
     var year = new Date().getFullYear() + parseInt(years);
-
-    if (principal < 0) {
+    // validate amount field, then return reults
+    if (principal < 1) {
         document.getElementById("principal").focus()
         alert("Enter a positive number");
     } else {
@@ -16,6 +16,7 @@ function compute() {
 
 
 };
+//text value update for slider
 function updateRate() {
     var rateval = document.getElementById("rate").value;
     document.getElementById("rate_val").innerText = rateval;
